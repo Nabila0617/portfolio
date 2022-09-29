@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap');
+/*--global variable--*/
+:root{ 
+    --primary : #d48f20;
+    --normal:   #ffffff;
+    --black:    #222020;
+    --bg:       #413d3d;
+    --danger:   #ff0404;
+    --border: 0.1rem solid rgb(255,255,255,0.3);
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;   
+}
+/* WIll affect every html element*/
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline-offset: none;
+    text-decoration: none;
+    text-transform: capitalize; /*First letter capital*/
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    transition: all 0.5s linear; /* save korle .3 sec por change hobe */
+}
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: var(--normal);
+}
+::-webkit-scrollbar-thumb{
+    background: #7b7474;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #3a3939;   
+}
+
+.btn{
+    display: inline-block;/*padding margin usable*/
+    background-color: var(--primary);
+    color: var(--normal);
+    padding: 0.7rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    font-weight: 500;
+}
+.btn:hover{
+    color: var(--primary);
+    background-color: transparent;
+    border-color: var(--primary);
+}
+body{
+    line-height: 1.7;
+    color: var(--normal);
+    background-color: var(--bg);
+}
+/* responsive container means ek bare left thk start hobe lekha*/
+.container{
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+/* FIRST SECTION */
+section{
+    padding: 6rem 0;
+}
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+/* HEADING */
+h1,h2,h3,h4{
+    line-height: 1.2; /*line er faka*/
+}
+h1{
+    font-size: 2.4rem;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.6rem;
+}
+h4{
+    font-size: 1.3rem;
+}
+a{
+    color: #ffffff;
+}
+/* IMAGE */
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+/* NICHER BORDER*/
+.border-bottom{
+    text-align: center;
+    display: inline-block;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+}
+/*----======NAV DESIGN======----*/
+
+nav{
+    background-color: rgb(24, 23, 23);
+    width: 100vw; /*====according to screen size=====*/
+    position: fixed; /*====eta alws dekha jabe=====*/
+    height: 5rem;
+    top: 0;
+    z-index: 100; /*====jetar value beshi sheta upore thakbe=====*/
+}
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-container span{
+    color: var(--primary);
+}
+.nav-container h3::first-letter{
+    font-size: 1.8rem;
+}
+.nav-container h3:hover{
+    color: var(--primary);
+    transform: rotateX(360deg);
+    transition-duration: 1.2s;
+}
+nav button{
+    display: none;    
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.nav-menu a{
+    font-size: 1rem;
+}
+.nav-menu a:hover{
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 0.6rem;
+    background-color: rgb(24, 23, 23);
+}
+
+/*----======End of NAV DESIGN======----*/
+
+/*----======HEADER DESIGN======----*/
+header{
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    background-color: var(--black);
+    margin-bottom: 2rem;
+}
+.header-container{
+    display: flex; /* ei flex er jnno half hoy*/
+    align-items: center;
+    position: relative;
+}
+
+.header-left{
+    flex: 1; /*half*/
+    padding: 1rem 3rem 1rem 0;
+}
+.header-left-img{
+    border: 3px solid var(--primary); 
+    overflow: hidden;  
+}
+
+.header-right{
+    flex: 1; /*half*/
+}
+.header-right .text-1{
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+}
+.header-right .text-2{
+    font-size: 3.6rem;
+    font-weight: 550;
+}
+.header-right .text-3{
+    font-size: 2.5rem;
+    margin: 0.3rem;
+}
+.header-right .typing{
+    font-weight: 500;
+    color: var(--primary);
+}
+
+/*===== About Me =====*/
+.about{
+    text-align: center;
+    
+}
+.about-container{
+    display: flex;
+    margin: auto;
+    position: relative;
+    margin-bottom: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.about-img{
+    border: 3px solid var(--primary); 
+    overflow: hidden;  
+    border-radius: 50%;
+    max-width: 14rem;
+    max-height: 14rem;
+    margin: 0 2rem 0 0;
+    align-items: center;
+    position: relative;
+}
+.about-text{
+    max-width: 70%;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 1.5rem;
+    
+}
+.about-text p{
+    margin-bottom: 1rem;
+}
+
+.about-text .text{
+    margin-bottom: 1rem;
+}
+.about-text .text span{
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/*===== Service =====*/
+.service{
+    text-align: center;
+    background-color: var(--black);
+    padding-top: 1.5rem;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-bottom: 3rem;
+}
+.cards p{
+    padding-bottom: 1rem;
+}
+.sbox{
+    padding: 1.5rem;
+    background-color: var(--primary);
+    margin: 0 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+.sbox i{
+    font-size: 2rem;
+    background-color: var(--black);
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--bg);
+    border-radius: 50%;
+    padding: 1rem 0 0 0;
+    margin: 0.7rem;
+    transition: all 1s;
+}
+.sbox i:hover{
+    color: var(--black);
+    background-color: var(--normal);
+    border: 2px solid var(--bg)
+}
+.sbox a{
+    background-color: var(--normal);
+    color: var(--black);
+    border-radius: 2rem;
+    padding: 0.5em;
+    font-weight: 500;
+    
+}
+.sbox a:hover{
+    background-color: var(--bg);
+    color: var(--normal);
+    border-radius: 2rem;
+    padding: 0.5em;
+    font-weight: 500;
+    border: 2px solid var(--normal)
+}
+
+/*=======Skill Section=======*/
+.new{
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+  .skill-container{
+    position: relative;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 1.8rem;
+    background-color: var(--black);
+    width: 700px;
+  }
+  .bar{
+    width: 100%;
+  }
+  .bar h4{
+    margin: 1rem 0;
+  }
+  .progress-line{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: var(--normal);
+    border-radius: 0.7rem;
+  }
+  .progress-line div{
+    position: relative;
+    width: 0%; /*nicher float right dekhte 50%*/
+    height: 10px;
+    background-color: var(--primary);
+    border-radius: 0.7rem;
+  }
+  .progress-line div span{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-top: 2px;
+    background-color: var(--black);
+    float: right; /* cs div 50% tai cener e*/
+    margin-top: -9px;
+    align-items: center;
+    justify-content: center;
+    margin-right: -20px;
+  }
+  .html{
+    animation: html 1s linear forwards;  
+  }
+  .css{
+    animation: css 1s linear forwards;  
+ }
+ .javascript{
+    animation: javascript 1s linear forwards;  
+ }
+ .react{
+    animation: react 1s linear forwards;  
+ }
+ .php{
+    animation: php 1s linear forwards;  
+ }
+ .mysql{
+    animation: mysql 1s linear forwards;  
+ }
+  @keyframes html{
+    100%{
+        width: 95%;
+    }
+  }
+  @keyframes css{
+    100%{
+        width: 75%;
+    }
+  }
+  @keyframes javascript{
+    100%{
+        width: 70%;
+    }
+  }
+  @keyframes react{
+    100%{
+        width: 50%;
+    }
+  }
+  @keyframes php{
+    100%{
+        width: 85%;
+    }
+  }
+  @keyframes mysql{
+    100%{
+        width: 70%;
+    }
+  }
+  
+  
+
+
+  /*=======Portfolio Section=======*/
+  .portfolio{
+    background-color: var(--black);
+  }
+  .portfolio-container{
+    text-align: center;
+    padding: 1.5rem 0 2.5rem 0; 
+  }
+  .gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--black);
+    border-radius: 2rem;
+  }
+  .gallery a{
+    height: 15rem;
+    width: 20rem;
+    margin: 1rem 1.2rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    box-shadow: 0 3px 5px var(--primary);
+  }
+  .gallery a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gallery a img:hover{
+    transform: scale(1.4);
+  }
+
+/*=======Contact Section=======*/
+.contact-container{
+    text-align: center;
+    padding-top: 1rem;
+}
+.contact-container h3{
+    font-weight: 400;
+}
+.row{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg);
+}
+
+.contact-info{
+    height: 8rem;
+    width: 20rem;
+    background-color: var(--bg);
+    margin: 0 1rem;
+}
+.contact-info .icon{
+    display: inline-block;
+    font-size: 25px;
+    color: var(--primary);
+}
+.contact-info h4{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0 5px;
+}
+
+
+.contact-info p{
+    font-size: 16px;
+    font-weight: 400;   
+}
+.cap p{
+    text-transform: lowercase;
+}
+
+.con{
+    background-color: var(--bg);
+    margin-bottom: 2rem;
+    
+}
+
+.input{
+    display: flex;
+    margin: 1rem;
+    height: 50px;
+    
+}
+.input .name{
+    margin-right: 2rem; 
+}
+
+.txt{
+    width: 50%;
+    border-radius: 0.4rem;
+    border: 2px solid var(--primary);
+    background-color: rgb(216, 212, 187);
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+    
+}
+.txt:focus{
+    box-shadow: 0 0 10px var(--primary);
+}
+.subject{
+    height: 50px;
+}
+.sub{
+    margin: 1rem 1rem;  
+}
+.message{
+    height: 100px; 
+}
+.inp{
+    width: 100%;
+    border-radius: 0.4rem;
+    border: 2px solid var(--primary);
+    background-color: rgb(216, 212, 187);
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+.inp:focus{
+    box-shadow: 0 0 10px var(--primary);
+}
+.msg{
+    margin: 2rem 1rem;
+    
+}
+.con .btn{
+    font-size: 18px;
+    width: 25%;
+}
+.ft-cr{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--normal);
+}
+/*======= MEDIA QUERIES (Tablet) =======*/
+
+@media screen and (max-width:1024px) {
+    .container{
+        width: var(--container-width-md);
+    }
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+    h3{
+        font-size: 1.4rem;
+    }
+    h4{
+        font-size: 1.1rem;
+    }
+    .btn{
+        padding: 0.3rem 1.2rem;
+    }
+    .header-right .text-1{
+        font-size: 1.2rem;
+        
+    }
+    .header-right .text-2{
+        font-size: 2.6rem;
+        
+    }
+    .header-right .text-3{
+        font-size: 1.5rem;
+       
+    }
+    .header-right .typing{
+        font-weight: 450;
+       
+    }
+    /*======= Navbar =======*/
+    nav button{
+        display: inline-block; 
+        color: var(--normal); 
+        background-color: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;  
+    }
+    #close-menu-btn{
+        display: none;
+    }
+    nav{
+        background-color: rgba(24, 23, 23, 0.788);
+    }
+    .nav-menu{
+        flex-direction: column;
+        gap: 0;
+        height: fit-content;
+        width: 18rem;
+        position: fixed;
+        top: 5rem;
+        right: 5%;  
+        display: none; 
+    }
+    .nav-menu li{
+        width: 100%;
+        height: 3rem;
+    }
+    .nav-menu li a{
+        background-color: #d48f20f5;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        font-size: 17px;
+        box-shadow: -4rem 6rem 10rem rgb(0,0,0,0.6);
+    }
+    
+
+    /*======= MEDIA QUERIES (Mobile) =======*/
+
+    @media screen and (max-width: 600px){
+        .container{
+            width: var(--container-width-sm);
+        }
+        .header-right a{
+            margin-bottom: 1rem;
+        }
+
+        .header-right .text-1{
+            font-size: 1rem;
+            
+        }
+        .header-right .text-2{
+            font-size: 2rem;
+            
+        }
+        .header-right .text-3{
+            font-size: 1.2rem;
+           
+        }
+        .header-right .typing{
+            font-weight: 450;
+           
+        }        
+        .about-container{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: -1rem;
+            
+        }
+        .about-text{
+            padding-top: 2rem;
+        }
+        .about-text a{
+            margin-left: 6.5rem;
+        }
+        /*=====Portfolio=====*/
+        .gallery a{
+            width: 100%;
+        
+          }
+        /*=====About me=====*/
+        .text .btn{
+
+        }
+        .btn{
+            padding: 0.3rem 1.2rem;
+        }
+        /*=====SERVICE=====*/
+        
+        .cards{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .sbox{
+            margin-bottom: 1rem;
+        }
+        /*=====contact=====*/
+        .row{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: end;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-info{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+        .contact-info .icon{
+            font-size: 30px;
+        }
+        .contact-info h4{
+            font-size: 25px;
+        }
+        .contact-info p{
+            font-size: 20px;
+        }
+        .contact-title{
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            height: 120px;
+        }
+        .input .txt{
+            width: 100%;
+            margin-bottom: 1rem ;
+            height: 50px;           
+        }
+       
+        nav{
+            background-color: rgba(24, 23, 23, 0.788);
+        }
+        .nav-menu{
+            flex-direction: column;
+            gap: 0;
+            height: fit-content;
+            width: 18rem;
+            position: fixed;
+            top: 5rem;
+            right: 5%;
+            display: none;
+        }
+        .nav-menu li{
+            width: 100%;
+            height: 3rem;
+        }
+        .nav-menu li a{
+            background-color: #d48f20e0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            font-size: 17px;
+        }
+        .cv{
+            margin-top: 1rem;           
+        }
+        .sm .btn{
+            
+            width: 50%;
+        }
+    }
+}
+
+
+
